@@ -4,4 +4,9 @@ class MailMerge:
             names = file.readlines()
         return names
 
+    def letter(self):
+        with open("./Input/Letters/starting_letter.txt", "r") as file:
+            letter = file.read()
+        return letter
+
     
