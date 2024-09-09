@@ -15,6 +15,6 @@ class MailMerge:
         letter = self.letter()
 
         for name in names:
-            with open(f"./Output/letter_for_{name}.txt", "w") as file:
-                letter = letter.replace("[name]", f"{name}")
-                file.write(letter)
+            with open(f"./Output/ReadyToSend/letter_for_{name}.txt", "w") as file:
+                output_letter = letter.replace("[name]", name)
+                file.write(output_letter)
