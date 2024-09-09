@@ -9,4 +9,12 @@ class MailMerge:
             letter = file.read()
         return letter
 
-    
+    def mail_merge(self):
+        names = self.names()
+        names = [name.removesuffix("\n") for name in names]
+        letter = self.letter()
+
+        for name in names:
+            with open(f"./Output/letter_for_{name}.txt", "w") as file:
+                letter = letter.replace("[name]", f"{name}")
+                file.write(letter)
